@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+ Landing Page Animada com Next.js & Framer Motion
 
-## Getting Started
+Este projeto é uma landing page moderna e responsiva, desenvolvida com Next.js, focada em apresentar conteúdo de forma elegante e fluida por meio de animações ativadas conforme o usuário rola a página.
 
-First, run the development server:
+A proposta é demonstrar como animações sutis, quando bem aplicadas, melhoram a experiência do usuário sem comprometer desempenho ou legibilidade.
 
-```bash
+Funcionalidades:
+
+- Animação de entrada baseada em scroll
+
+- Transições suaves e naturais com Framer Motion
+
+- Layout responsivo e minimalista
+
+- Paleta de cores pensada para projetos de tecnologia e IA
+
+- Estrutura simples e reutilizável
+
+Conceito de Animação:
+
+- O projeto utiliza um componente reutilizável chamado ScrollReveal, responsável por animar qualquer conteúdo quando ele entra na área visível da tela.
+
+Como funciona:
+
+- O conteúdo inicia oculto (opacity: 0)
+
+- Ao atingir 50% de visibilidade, ele surge suavemente
+
+- A animação ocorre apenas uma vez (não repete ao subir/rolar novamente)
+
+- Isso cria uma sensação de leitura fluida, comum em landing pages modernas.
+
+Exemplo do componente ScrollReveal 
+  - import { motion } from "framer-motion";
+
+const ScrollReveal = ({ children, delay = 0.1, duration = 0.8 }) => {
+  const variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  return (
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      transition={{
+        duration,
+        delay,
+        ease: "easeOut",
+      }}
+      viewport={{
+        once: true,
+        amount: 0.5,
+      }}
+      variants={variants}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+export default ScrollReveal;
+
+
+Esse componente pode ser aplicado a títulos, parágrafos ou seções inteiras.
+
+Estilo Visual:
+
+O CSS foi estruturado com variáveis para facilitar manutenção e personalização de temas:
+
+Cores escuras com contraste suave
+
+Accent color para destaques visuais
+
+Tipografia legível e bem espaçada
+
+Gradientes sutis no header e footer para profundidade visual
+
+O foco foi manter um visual limpo, tecnológico e agradável para leitura.
+
+Tecnologias Utilizadas:
+
+Next.js
+
+React
+
+TypeScript
+
+Framer Motion
+
+CSS Modules
+
+Como rodar o projeto localmente:
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Depois, acesse:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+Observações finais:
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto tem caráter demonstrativo, com foco em:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+boas práticas de animação
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+organização de componentes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+estética moderna para landing pages
