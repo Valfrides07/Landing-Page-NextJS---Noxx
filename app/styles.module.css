@@ -1,0 +1,79 @@
+/* css do page */
+
+/* classe para responsavidade do body */
+html,
+body {
+  /* overflow-x: hidden; estava add um botao de rolagem */
+  background-color: var(--cor-principal);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  font-family: var(--font-text);
+  color: var(--textos);
+}
+
+.header_styles {
+  display: flex;
+  background: var(--cor-terciaria);
+  text-align: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.h1_primeiro {
+  font-size: 1.7rem;
+  font-family: var(--font-text);
+  color: var(--accent);
+  letter-spacing: 0.5px;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+.h1_primeiro:hover {
+  transform: scale(1.05);
+}
+.h2_infos {
+  font-family: var(--font-text);
+  text-align: center;
+  margin-block: 2rem;
+  margin-inline: auto;
+  font-size: 2rem;
+  background: var(--cor-secundaria);
+  color: var(--accent);
+  background: transparent;
+}
+
+.p_infos {
+  text-align: center;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: 900px;
+  padding-block: 40px;
+  padding-inline: 3px;
+  font-size: 1.3rem;
+  font-family: var(--font-text);
+  line-height: 1.5;
+  color: var(--texto-secundario);
+}
+
+.footer_ {
+  font-size: 1rem;
+  display: flex;
+  background: var(--cor-terciaria);
+  text-align: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.header_styles {
+  background: linear-gradient(180deg, var(--cor-terciaria), rgba(0, 0, 0, 0.3));
+}
+
+.footer_ {
+  background: linear-gradient(0deg, var(--cor-terciaria), rgba(0, 0, 0, 0.3));
+}
